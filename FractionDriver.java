@@ -1,8 +1,10 @@
 public class FractionDriver {
 	public static void main (String[]args) {
-
-	//Fraction f3 = new Fraction("1/2"); 
 	
+	//Fraction f1 = new Fraction(); 
+	//Fraction f2 = new Fraction(100, 150); 
+	//Fraction f3 = new Fraction("1/2"); 
+	//Fraction f4 = new Fraction(f3); 
 	//System.out.println(f3); 
     Fraction f1 = new Fraction(6,12);  
     f1.reduce(); 
