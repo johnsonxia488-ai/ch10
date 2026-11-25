@@ -1,3 +1,5 @@
+import java.util.random; 
+
 public class FractionQuiz {
     private int numerator, denominator;
 
@@ -5,11 +7,11 @@ public class FractionQuiz {
         numerator = 1;
         denominator = 1;
     }
-    public Fraction() {
+    public Fraction() { 
 		Random random = new Random(); 
 		setNum(random.nextInt(1,9)); 
 		setDenom(random.nextInt(1,9)); 
-		
+	}	
     public Fraction(int n, int d) {
         numerator = n;
         if (d != 0) {
@@ -67,7 +69,7 @@ public class FractionQuiz {
         a = Math.abs(a);
         b = Math.abs(b);
 
-        while (a != b) {
+        while (a != b) {Refactor Fraction class with multiple constructors
             if (a > b) {
                 a = a - b;
             } else {
