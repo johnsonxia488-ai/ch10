@@ -1,13 +1,10 @@
-import java.util.random; 
-
 public class Fraction {
     private int numerator, denominator;
-    
-    public Fraction() { 
-		Random random = new Random(); 
-		setNum(random.nextInt(9) +1); 
-		setDenom(random.nextInt(1) + 9); 
-	}	
+
+	public Fraction() {
+        numerator = 1;
+        denominator = 1;
+    }
 	
     public Fraction(int n, int d) {
         numerator = n;
