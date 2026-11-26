@@ -1,4 +1,4 @@
-import java.util.random; 
+import java.util.Random; 
 
 public class Fraction1 {
     private int numerator, denominator;
@@ -17,25 +17,25 @@ public class Fraction1 {
             denominator = 1;
             System.out.println("Error");
         }
+        reduce(); 
     }
-
     public Fraction(String s) {
-        String n = s.substring(0, s.indexOf("/"));
-        String d = s.substring(s.indexOf("/") + 1);
-        numerator = Integer.parseInt(n);
-        int denom = Integer.parseInt(d);
-        if (denom != 0) {
-            denominator = denom;
-        } else {
-            denominator = 1;
-            System.out.println("Error");
-        }
+		int slash = s.indexOf("/"); 
+		int n = Integer.parseInt(s.substring(0, slash)); 
+		int d = Integer.parseInt(s.substring(slash + 1)); 
+		numerator = n; 
+		denominator = d; 
+		reduce(); 
     }
 
     public Fraction(Fraction f) {
         numerator = f.getNum();
         denominator = f.getDenom();
     }
+    
+    public boolean equals(Fraciton f) {
+		return numerator == f.numerator && denominator == f.denominator; 
+}
 
     public int getNum() {
         return numerator;
@@ -114,3 +114,4 @@ public class Fraction1 {
         return answer;
     }
 }
+
