@@ -1,15 +1,15 @@
-import java.util.Random; 
+import java.util.Random;
 
 public class Fraction1 {
     private int numerator, denominator;
     
-    public Fraction() { 
-		Random random = new Random(); 
-		setNum(random.nextInt(9) +1); 
-		setDenom(random.nextInt(1) + 9); 
-	}	
-	
-    public Fraction(int n, int d) {
+    public Fraction1() { 
+        Random random = new Random(); 
+        setNum(random.nextInt(9) + 1); 
+        setDenom(random.nextInt(9) + 1); 
+    }    
+    
+    public Fraction1(int n, int d) {
         numerator = n;
         if (d != 0) {
             denominator = d;
@@ -19,23 +19,24 @@ public class Fraction1 {
         }
         reduce(); 
     }
-    public Fraction(String s) {
-		int slash = s.indexOf("/"); 
-		int n = Integer.parseInt(s.substring(0, slash)); 
-		int d = Integer.parseInt(s.substring(slash + 1)); 
-		numerator = n; 
-		denominator = d; 
-		reduce(); 
+
+    public Fraction1(String s) {
+        int slash = s.indexOf("/"); 
+        int n = Integer.parseInt(s.substring(0, slash)); 
+        int d = Integer.parseInt(s.substring(slash + 1)); 
+        numerator = n; 
+        denominator = d; 
+        reduce(); 
     }
 
-    public Fraction(Fraction f) {
+    public Fraction1(Fraction1 f) {
         numerator = f.getNum();
         denominator = f.getDenom();
     }
     
-    public boolean equals(Fraciton f) {
-		return numerator == f.numerator && denominator == f.denominator; 
-}
+    public boolean equals(Fraction1 f) {
+        return numerator == f.numerator && denominator == f.denominator; 
+    }
 
     public int getNum() {
         return numerator;
@@ -65,8 +66,7 @@ public class Fraction1 {
     public int GCF(int a, int b) {
         a = Math.abs(a);
         b = Math.abs(b);
-
-        while (a != b) {Refactor Fraction class with multiple constructors
+        while (a != b) {
             if (a > b) {
                 a = a - b;
             } else {
@@ -82,34 +82,34 @@ public class Fraction1 {
         denominator = denominator / G;
     }
 
-    public static Fraction mult(Fraction a, Fraction b) {
+    public static Fraction1 mult(Fraction1 a, Fraction1 b) {
         int n = a.getNum() * b.getNum();
         int d = a.getDenom() * b.getDenom();
-        Fraction answer = new Fraction(n, d);
+        Fraction1 answer = new Fraction1(n, d);
         answer.reduce();
         return answer;
     }
 
-    public static Fraction div(Fraction a, Fraction b) {
+    public static Fraction1 div(Fraction1 a, Fraction1 b) {
         int n = a.getNum() * b.getDenom();
         int d = a.getDenom() * b.getNum();
-        Fraction answer = new Fraction(n, d);
+        Fraction1 answer = new Fraction1(n, d);
         answer.reduce();
         return answer;
     }
 
-    public static Fraction add(Fraction a, Fraction b) {
+    public static Fraction1 add(Fraction1 a, Fraction1 b) {
         int n = a.getNum() * b.getDenom() + b.getNum() * a.getDenom();
         int d = a.getDenom() * b.getDenom();
-        Fraction answer = new Fraction(n, d);
+        Fraction1 answer = new Fraction1(n, d);
         answer.reduce();
         return answer;
     }
 
-    public static Fraction sub(Fraction a, Fraction b) {
+    public static Fraction1 sub(Fraction1 a, Fraction1 b) {
         int n = a.getNum() * b.getDenom() - b.getNum() * a.getDenom();
         int d = a.getDenom() * b.getDenom();
-        Fraction answer = new Fraction(n, d);
+        Fraction1 answer = new Fraction1(n, d);
         answer.reduce();
         return answer;
     }
